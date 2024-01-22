@@ -12,9 +12,9 @@ function App() {
       <Router>
         <div>
           <nav>
-            <ul>
+            <ul className='nav'>
               <li>
-                <Link to= "/add">Add Employee</Link>
+                <Link to= "/add" >Add Employee</Link>
               </li>
               <li>
               <Link to="/list">Employees</Link>
@@ -23,12 +23,15 @@ function App() {
           </nav>
 
           <hr/>
+
+          <div className="routes">
           <Routes>
             <Route path="/add" element={<AddEmployee />} />
             <Route path="/edit/:id" element={<EditEmployee />} />
             <Route path="/list" element={<ListEmployee />} />
           </Routes>
-
+          </div>
+          
         </div>
       </Router>
     </div>

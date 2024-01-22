@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../../Slices/employeeSlice";
+import "./AddEmployee.css";
+
 function AddEmployee() {
     const dispatch = useDispatch();
 
@@ -36,7 +38,7 @@ function AddEmployee() {
                 <input 
                     type="text" 
                     id="fullname" 
-                    placeholder="Full name" 
+                    placeholder="Enter your full name" 
                     value={fullname} 
                     onChange={(e)=>setFullName(e.target.value)}/>
                 <label htmlFor="dob">Date of birth</label>
@@ -48,7 +50,7 @@ function AddEmployee() {
                 <input 
                     type="text" 
                     id="department" 
-                    placeholder="Department"
+                    placeholder="Enter your department"
                     value={department}
                     onChange={(e)=>setDepartment(e.target.value)} />
                 <label htmlFor="experience">Experience</label>
@@ -57,8 +59,9 @@ function AddEmployee() {
                         step="1" 
                         min="0"
                         value={experience}
+                        placeholder="Enter your experience"
                         onChange={(e)=>setExperience(e.target.value)} />
-                <input type="submit" />
+                <input type="submit" className="submit-btn"/>
             </form>
         </div>
     )
